@@ -8,5 +8,6 @@
 </head>
 <body>
     <x-test-new />
+    <p>testing if</p>
 </body>
 </html>

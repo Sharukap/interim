@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Dark Dashboard</title>
+  <title>Complain Module</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -82,10 +82,10 @@
             <!-- Links -->
             <ul class="navbar-nav nav-tabs">
             <li class="nav-item">
-                <a class="nav-link text-light font-italic p-2" href="/general">General Module</a>
+                <a class="nav-link text-light font-italic p-2" href="/dashboard/complaint">General Module</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-light font-italic p-2" href="#">User Management</a>
+                <a class="nav-link text-light font-italic p-2" href="/dashboard/admin">User Management</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-light font-italic p-2" href="#">Environment Module</a>
@@ -109,7 +109,82 @@
 
 
     <div style="background-color:#ECF0F1" class="col-md p-2 border border-secondary rounded-lg ml-2 mr-3">
-      @yield('cont')
+      <!-- @yield('cont') -->
+      <h3 class="p-3 display-4">Complaints</h3><hr>
+      <div class="row justify-content-center border-secondary rounded-lg ml-3">
+    
+      </br>
+        <div class="col-md-3 ">
+        <a href="/newcrime" class="btn btn-info mr-4" role="button" >Make new complaint</a>
+        </div>
+        <div class="col-md-3 ">
+        <form action="\trackcrime" method="get">
+        @csrf
+        <input type="hidden" class="form-control" name="create_by" value="{{ Auth::user()->id }}">
+        <button type="submit" class="btn btn-primary" >Track my complaints</button>
+        <!-- <a href="/trackcrime" class="btn btn-info mr-4" role="button">Track my complaints</a> -->
+        </form>
+        </div>
+        <div class="col-md-3 ">
+        <a href="#" class="btn btn-info mr-4" role="button" data-toggle="modal" data-target="#complaintLog">How it works</a>
+        </div>
+    </div>
+    </br>
+    </hr>
+    <h5 class="p-3 display-4">Contacts</h5>
+    <div class="row justify-content-center">
+        <div class="col-md-3">
+            
+            <div class="card bg-dark text-light">
+                <div class="card-header text-center">
+                    <a class="nav-link text-light font-italic p-2" href="#">Department of Wildlife Conservation</a>
+                
+                </div>
+                    <div class="card-body text-center text-light">
+                        <p class="card-text p-2">Hotline 0xxxx</p>
+                        <p class="card-text p-2">email 0xxxx@gmail.com</p>                       
+                    </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+        <div class="card bg-dark text-light">
+            <div class="card-header text-center">
+                <a class="nav-link text-light font-italic p-2" href="#">Department of Forest Conservation</a>
+            </div>
+            <div class="card-body text-center text-light">
+            <p class="card-text p-2">Hotline 0xxxx</p>
+            <p class="card-text p-2">email 0xxxx@gmail.com</p>     
+            </div>
+        </div>
+        </div>
+        <div class="col-md-3">
+        <div class="card bg-dark text-light">
+            <div class="card-header text-center">
+                <a class="nav-link text-light font-italic p-2" href="#">Central Environment Authority</a>
+            </div>
+            <div class="card-body text-center text-light">
+            <p class="card-text p-2">Hotline 0xxxx</p>
+            <p class="card-text p-2">email 0xxxx@gmail.com</p>     
+            </div>
+        </div>
+        </div>
+        <div class="col-md-3">
+        <div class="card bg-dark text-light">
+            <div class="card-header text-center">
+                <a class="nav-link text-light font-italic p-2" href="#">List of regional offices</a>
+            </div>
+            <div class="card-body text-center text-light">
+            <a class="nav-link text-light font-italic p-2" href="#">Forest officers</a>
+            <a class="nav-link text-light font-italic p-2" href="#">Wildlife</a>   
+            </div>
+        </div>
+        </div>
+        
+        
+    </div>
+    <hr>
+   
+      <!-- end of content -->
     </div>
 </div>
 </div>

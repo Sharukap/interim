@@ -85,7 +85,7 @@
                 <a class="nav-link text-light font-italic p-2" href="/general">General Module</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-light font-italic p-2" href="#">User Management</a>
+                <a class="nav-link text-light font-italic p-2" href="/dashboard/admin">User Management</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-light font-italic p-2" href="#">Environment Module</a>
@@ -109,7 +109,34 @@
 
 
     <div style="background-color:#ECF0F1" class="col-md p-2 border border-secondary rounded-lg ml-2 mr-3">
-      @yield('cont')
+    <table class="table table-dark table-striped border-secondary rounded-lg mr-4">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>crime type</th>
+                <th>description</th>
+                <th>Location</th>
+                <th>Date complained logged</th>
+                <th>Action taken</th>
+                <th>Status</th>
+                <th>Assign</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($Crimes as $row) <tr>
+                <td>{{$row['id']}}</td>
+                <td>{{$row['crime_type']}}</td>
+                <td>{{$row['description']}}</td>
+                <td>{{$row['polygon']}}</td>
+                <td>{{$row['created_at']}}</td>
+                <td>{{$row['action_taken']}}</td>
+                <td>{{$row['status']}}</td>
+                <td><a href='/assign/{{ $row['id'] }}' class="btn btn-outline-warning" role="button" >Assign</a></td>
+                <!-- <td><a href="#" class="btn btn-outline-danger" role="button">Disable</a></td> -->
+                </tr>
+                @endforeach
+        </tbody>
+    </table>
     </div>
 </div>
 </div>

@@ -8,10 +8,10 @@
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Name</th>
-                <th>Organization</th>
-                <th>Email</th>
-                <th>Role</th>
+                <th>crime type</th>
+                <th>description</th>
+                <th>Date complained logged</th>
+                <th>Action taken</th>
                 <th>Status</th>
                 <th>More Data</th>
                 <th>Change Privilege</th>
@@ -20,11 +20,12 @@
             </tr>
         </thead>
         <tbody>
-            @foreach($Users as $row) <tr>
+            @foreach($Crimes as $row) <tr>
                 <td>{{$row['id']}}</td>
-                <td>{{$row['name']}}</td>
-                <td>Environment Ministry</td>
-                <td>saman@gmail.com</td>
+                <td>{{$row['crime_type']}}</td>
+                <td>{{$row['description']}}</td>
+                <td>{{$row['created_at']}}</td>
+                <td>{{$row['action_taken']}}</td>
                 <td>Admin</td>
                 <td>Active</td>
                 <td class="text-center"><a href="#" class="btn btn-outline-info" role="button" data-toggle="modal" data-target="#moreInfo">...</a></td>
@@ -35,5 +36,12 @@
                 @endforeach
         </tbody>
     </table>
+    <div class='row'>
+    <span>
+    
+    <a href="/newcrime" class="btn btn-outline-danger" role="button">Disacreate new</a></td>
+    </span>
+    </div>
+
     <body>
 </html>

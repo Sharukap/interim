@@ -16,4 +16,5 @@ class RoleController extends Controller
         $roles = Role::where('id',4)->get();
         return $roles;
     }
+
 }

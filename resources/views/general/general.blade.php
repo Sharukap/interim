@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Dark Dashboard</title>
+  <title>General Module</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -82,10 +82,10 @@
             <!-- Links -->
             <ul class="navbar-nav nav-tabs">
             <li class="nav-item">
-                <a class="nav-link text-light font-italic p-2" href="/general">General Module</a>
+                <a class="nav-link text-light font-italic p-2" href="/dashboard/complaint">General Module</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-light font-italic p-2" href="#">User Management</a>
+                <a class="nav-link text-light font-italic p-2" href="/dashboard/admin">User Management</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-light font-italic p-2" href="#">Environment Module</a>
@@ -109,7 +109,101 @@
 
 
     <div style="background-color:#ECF0F1" class="col-md p-2 border border-secondary rounded-lg ml-2 mr-3">
-      @yield('cont')
+      <!-- @yield('cont') -->
+      <h3 class="p-3 display-4">General Module</h3><hr>
+    <div class="row justify-content-center">
+        <div class="col-md-3">
+            <div class="card bg-dark text-light">
+                <div class="card-header text-center">
+                    <a class="nav-link text-light font-italic p-2" href="#">Tree cutting</a>
+                
+                </div>
+                    <div class="card-body text-center text-light">
+                        <p class="card-text p-2">Quick links</p>
+                        <a class="nav-link text-light font-italic p-2" href="#">Application form</a>
+                        <a class="nav-link text-light font-italic p-2" href="#">Check status</a>
+                    </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+        <div class="card bg-dark text-light">
+            <div class="card-header text-center">
+                <a class="nav-link text-light font-italic p-2" href="#">Development project </a>
+            </div>
+            <div class="card-body text-center text-light">
+                <p class="card-text p-2">Quick links</p>
+                <a class="nav-link text-light font-italic p-2" href="#">Application form</a>
+                <a class="nav-link text-light font-italic p-2" href="#">Check status</a>
+            </div>
+        </div>
+        </div>
+        <div class="col-md-3">
+        <div class="card bg-dark text-light">
+            <div class="card-header text-center">
+                <a class="nav-link text-light font-italic p-2" href="#">Reforest Project</a>
+            </div>
+            <div class="card-body text-center text-light">
+                <p class="card-text p-2">Quick links</p>
+                <a class="nav-link text-light font-italic p-2" href="/dashboard/complaint">Register new project</a>
+                <a class="nav-link text-light font-italic p-2" href="#">Check for reforest details</a>
+            </div>
+        </div>
+        </div>
+        <div class="col-md-3">
+        <div class="card bg-dark text-light">
+            <div class="card-header text-center">
+                <a class="nav-link text-light font-italic p-2" href="/crimehome">Complaints</a>
+            </div>
+            <div class="card-body text-center text-light">
+                <p class="card-text p-2">Quick links</p>
+                <a class="nav-link text-light font-italic p-2" href="/newcrime">Make a complaint</a>
+                <a class="nav-link text-light font-italic p-2" href="/crimeadmin">Check status</a>
+            </div>
+        </div>
+        </div>
+        
+    </div>
+    <hr>
+    <div class="row border-secondary rounded-lg ml-3">
+      <h5 class="p-3">Pending Requests</h5>
+      <table class="table table-dark table-striped mr-4">
+        <thead>
+        <tr>
+            <th>Category</th>
+            <th>Date Submitted</th>
+            <th>User</th>
+            <th>Check</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Tree Removal</td>
+            <td>2020/12/12</td>
+            <td>Saman Perera</td>
+            <td><a href="#" class="text-muted">Go to request</a></td>
+        </tr>
+        <tr>
+            <td>Development Project</td>
+            <td>2020/11/14</td>
+            <td>Asel Perera</td>
+            <td><a href="#" class="text-muted">Go to request</a></td>
+        </tr>
+        <tr>
+            <td>Tree Removal</td>
+            <td>2020/10/5</td>
+            <td>Sharuka Perera</td>
+            <td><a href="#" class="text-muted">Go to request</a></td>
+        </tr>
+        <tr>
+            <td>Environment Restoration</td>
+            <td>2020/10/4</td>
+            <td>Sharuka Perera</td>
+            <td><a href="#" class="text-muted">Go to request</a></td>
+        </tr>
+        </tbody>
+    </table>
+    </div>
+      <!-- end of content -->
     </div>
 </div>
 </div>

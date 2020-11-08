@@ -82,10 +82,10 @@
             <!-- Links -->
             <ul class="navbar-nav nav-tabs">
             <li class="nav-item">
-                <a class="nav-link text-light font-italic p-2" href="/general">General Module</a>
+                <a class="nav-link text-light font-italic p-2" href="/complain">General Module</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-light font-italic p-2" href="#">User Management</a>
+                <a class="nav-link text-light font-italic p-2" href="/dashboard/admin">User Management</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-light font-italic p-2" href="#">Environment Module</a>
@@ -109,7 +109,60 @@
 
 
     <div style="background-color:#ECF0F1" class="col-md p-2 border border-secondary rounded-lg ml-2 mr-3">
-      @yield('cont')
+      <!-- @yield('cont') -->
+        <div class="container-fluid">
+            <div class="row">
+            <form action="/admin/create1" method="post">
+                @csrf
+                       <h6>Personal postDetails</h6>
+                       <div class="input-group mb-3">
+                           <div class="input-group-prepend">
+                               <span class="input-group-text">Full Name</span>
+                           </div>
+                           <input type="text" class="form-control" name="name" data-form-field>
+                       </div>
+
+                       <div class="input-group mb-3">
+                           <input type="text" class="form-control" name="email" placeholder="Your Email">
+                           <div class="input-group-append">
+                               <span class="input-group-text">@example.com</span>
+                           </div>
+                       </div>
+                       <select name="Role" class="custom-select">
+                           <option selected>Select Role</option>
+                           <option value="1">Administrator</option>
+                           <option value="2">Head of Org.</option>
+                           <option value="3">Manager</option>
+                           <option value="4">Staff</option>
+                           <option value="5">Citizen</option>
+                       </select>
+                       <hr>
+                       <h6>Additional Details</h6>
+                       <select name="Organization" class="custom-select mb-3">
+                           <option selected>Select Organization</option>
+                           <option value="MoE">Ministry of Environment</option>
+                           <option value="MoW">Ministry of Wildlife</option>
+                           <option value="RDA">Road Development Agency</option>
+                       </select>
+                       <select name="Designation" class="custom-select">
+                           <option selected>Select Designation</option>
+                           <option value="manager">Manager</option>
+                           <option value="dept.manager">Depity Manager</option>
+                           <option value="assit.manager">Assistant Manager</option>
+                       </select>
+                       <hr>
+                       <div class="form-check">
+                           <label class="form-check-label">
+                               <input type="checkbox" class="form-check-input" value=""><strong>This information has been verified.</strong>
+                           </label>
+                       </div>
+                       <div class="form-submit">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                            
+                        </div>
+					</form>
+            </div>
+        </div>
     </div>
 </div>
 </div>
